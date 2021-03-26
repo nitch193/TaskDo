@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskDo</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div>
+        <button class="menu">≡</button>
+        <a href="#" class="logo"> ✅ TaskDo </a>
+      </div>
+      <div>
+        <button class="add-task">+</button>
+        <button class="theme">🌙</button>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <button class="close-sidebar">X</button>
+      <button class="project-btn">Add new Project</button>
+      <div class="all-projects"></div>
+    </div>
+    <div class="edit-project">
+      <input type="text" name="project name" id="project-name" />
+      <button class="ok">OK</button>
+    </div>
+    <div class="tasks">
+      <div class="project-name"></div>
+      <div class="task">
+        <div class="task-name">Default Task</div>
+        <div class="task-control">
+          <button class="edit-task-btn">✍</button>
+          <button class="delete-task">X</button>
+        </div>
+      </div>
+    </div>
+    <div class="edit-task">
+      <input type="text" name="task-name" placeholder="Task Name" />
+      <input type="date" name="date" id="date" />
+      <input
+        type="number"
+        name="priority"
+        id="priority"
+        ,
+        placeholder="Priority"
+        max="3"
+        min="1"
+      />
+      <button class="ok">OK</button>
+    </div>
+  </body>
+</html>
