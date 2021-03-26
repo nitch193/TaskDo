@@ -12,7 +12,6 @@ export default function newTask(
   addTaskbtn.addEventListener("click", () => {
     editTask.style.transform = "translateY(200px)";
     selectedProject = taskBody.firstChild.textContent;
-    console.log(selectedProject);
   });
   editTask.children[3].addEventListener("click", () => {
     editTask.style.transform = "translateY(800px)";
@@ -24,6 +23,5 @@ export default function newTask(
     allProjects[index].Tasks.push(TaskObject);
     saveLocalStorage(allProjects);
     renderTasks(selectedProject, allProjects);
-    console.log(TaskObject);
   });
 }

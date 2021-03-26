@@ -10,9 +10,13 @@ export default function renderTasks(selectedProject, allProjects) {
     let tasks = getAllTasks(allProjects, selectedProject);
     taskBody.firstChild.textContent = tasks.name;
     for (let i = 0; i < tasks.Tasks.length; i++) {
-      let taskDiv = createTaskBody();
+      let taskDiv = createTaskBody(allProjects);
       taskDiv.firstChild.textContent =
-        tasks.Tasks[i].taskName + tasks.Tasks[i].due + tasks.Tasks[i].priority;
+        tasks.Tasks[i].taskName +
+        "/" +
+        tasks.Tasks[i].due +
+        "/" +
+        tasks.Tasks[i].priority;
       taskBody.appendChild(taskDiv);
     }
   }
