@@ -135,7 +135,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.edit-task {
+.new-task {
   position: absolute;
   z-index: 36;
   max-width: 400px;
@@ -146,4 +146,18 @@ body {
   justify-content: space-evenly;
   transform: translateY(750px);
   transition: 0.5s;
+}
+
+.edit-task {
+  display: none;
+}
+.show-edit-task {
+  position: absolute;
+  display: flex;
+  z-index: 37;
+  max-width: 400px;
+  min-width: 250px;
+  height: 200px;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

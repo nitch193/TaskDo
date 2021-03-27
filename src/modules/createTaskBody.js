@@ -1,4 +1,5 @@
 import deleteThisTask from "./deleteThisTask";
+import updateTask from "./updateTask";
 export default function createTaskBody(allProjects) {
   const task = document.createElement("div");
   task.className = "task";
@@ -9,6 +10,9 @@ export default function createTaskBody(allProjects) {
   const editTaskBtn = document.createElement("button");
   editTaskBtn.className = "edit-task-btn";
   editTaskBtn.textContent = "✍";
+  editTaskBtn.onclick = function () {
+    updateTask(this, allProjects);
+  };
   const deleteTaskBtn = document.createElement("button");
   deleteTaskBtn.className = "delete-task";
   deleteTaskBtn.textContent = "X";

@@ -5,7 +5,8 @@ import newTask from "./modules/newtask.js";
 import renderProjects from "./modules/renderprojects.js";
 import renderTasks from "./modules/renderTasks";
 const taskBody = document.querySelector(".tasks");
-export { taskBody };
+const editTaskForm = document.querySelector(".edit-task");
+export { taskBody, editTaskForm };
 (function init() {
   const closeBtn = document.querySelector(".close-sidebar");
   const menuBtn = document.querySelector(".menu");
@@ -13,7 +14,7 @@ export { taskBody };
   const addProjectBtn = document.querySelector(".project-btn");
   const editProjectForm = document.querySelector(".edit-project");
   const addTaskbtn = document.querySelector(".add-task");
-  const editTaskForm = document.querySelector(".edit-task");
+  const newTaskForm = document.querySelector(".new-task");
   const projects = document.querySelector(".all-projects");
   let selectedProject = "defaultproject";
   const defaultProject = {
@@ -29,7 +30,7 @@ export { taskBody };
     allProjects = [...getProjects];
   }
   sideBar(menuBtn, menu, closeBtn);
-  newTask(addTaskbtn, editTaskForm, allProjects, selectedProject);
+  newTask(addTaskbtn, newTaskForm, allProjects, selectedProject);
   renderProjects(projects, allProjects, selectedProject);
   renderTasks(selectedProject, allProjects);
   newProject(addProjectBtn, editProjectForm, allProjects);
