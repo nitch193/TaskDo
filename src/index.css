@@ -103,7 +103,7 @@ body {
   justify-content: space-evenly;
 }
 
-.edit-project {
+.new-project {
   position: absolute;
   z-index: 9;
   max-width: 450px;
@@ -115,6 +115,20 @@ body {
   transform: translateY(-200px);
   transition: 0.5s;
 }
+.edit-project {
+  display: none;
+}
+.show-edit-project {
+  position: absolute;
+  z-index: 9;
+  max-width: 450px;
+  min-width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .tasks {
   display: flex;
   flex-direction: column;
