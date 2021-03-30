@@ -9,13 +9,13 @@ export default function createTaskBody(allProjects) {
   taskControl.className = "task-control";
   const editTaskBtn = document.createElement("button");
   editTaskBtn.className = "edit-task-btn";
-  editTaskBtn.textContent = "✍";
+  editTaskBtn.innerHTML = "&#x1F589";
   editTaskBtn.onclick = function () {
     updateTask(this, allProjects);
   };
   const deleteTaskBtn = document.createElement("button");
   deleteTaskBtn.className = "delete-task";
-  deleteTaskBtn.textContent = "X";
+  deleteTaskBtn.innerHTML = "&#128465";
   deleteTaskBtn.onclick = function () {
     deleteThisTask(this, allProjects);
   };

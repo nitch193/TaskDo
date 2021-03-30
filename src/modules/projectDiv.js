@@ -5,9 +5,6 @@ import getAllProject from "./getAllProject";
 import createProject from "./createProject";
 import saveLocalStorage from "./saveLocalStorage";
 import renderProjects from "./renderprojects";
-// import getAllProject from "./getAllProject";
-// import saveLocalStorage from "./saveLocalStorage";
-// import renderProjects from "./renderprojects";
 export default function projectDiv(selectedProject, allProjects) {
   const project = document.createElement("div");
   project.className = "project";
@@ -22,7 +19,7 @@ export default function projectDiv(selectedProject, allProjects) {
   projectControls.className = "project-control";
   const editProjectBtn = document.createElement("button");
   editProjectBtn.className = "edit-project-btn";
-  editProjectBtn.textContent = "✍";
+  editProjectBtn.innerHTML = "&#x1F589";
   editProjectBtn.onclick = function () {
     let project = this.parentNode.previousSibling.textContent;
     if (project === "defaultproject") return;
@@ -53,7 +50,7 @@ export default function projectDiv(selectedProject, allProjects) {
     };
   };
   const delProjectBtn = document.createElement("button");
-  delProjectBtn.textContent = "X";
+  delProjectBtn.innerHTML = "&#128465";
   delProjectBtn.className = "delete-project";
   delProjectBtn.onclick = function () {
     if (this.parentNode.previousSibling.textContent === "defaultproject")

@@ -1,6 +1,10 @@
 * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
+}
+html {
+  background-color: #575151;
 }
 body {
   position: relative;
@@ -10,6 +14,7 @@ body {
   overflow-y: hidden;
 }
 .nav {
+  background-color: #00adb5;
   width: 100%;
   display: flex;
   padding: 10px 0;
@@ -25,82 +30,128 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin: 0 2px;
 }
 .menu {
   all: unset;
-  padding: 0 10px;
+  text-align: center;
+  padding: 0.1em;
   cursor: pointer;
   font-weight: 900;
-  font-size: 2.5em;
+  font-size: 2em;
+  color: white;
+}
+.menu:hover {
+  background-color: #2c595c33;
+  border-radius: 10px;
 }
 .logo {
   all: unset;
   font-size: 1.5em;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
+  color: white;
+  font-weight: 500;
 }
 .add-task {
   all: unset;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  color: black;
-  font-size: 2em;
-  font-weight: 900;
-  border: 2px black solid;
-  margin: 0 5px;
-  border-radius: 50%;
+  color: white;
+  margin-right: 5px;
+  padding: 10px;
   cursor: pointer;
-}
-
-.theme {
-  all: unset;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  color: black;
+  font-weight: 500;
   font-size: 1em;
-  font-weight: 900;
-  border: 2px black solid;
-  margin: 0 5px;
-  border-radius: 50%;
-  cursor: pointer;
+}
+.add-task:hover {
+  background-color: #2c595c33;
 }
 .sidebar {
   position: absolute;
-  z-index: 2;
+  top: 0;
+  background-color: #575151;
+  left: -100vw;
+  width: 400px;
   height: 100vh;
-  width: 0;
-  max-width: 100vw;
   transition: 0.5s ease-in-out;
-  top: 2.6em;
-  left: 0;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
 }
-
+.show {
+  left: 0;
+}
 .close-sidebar {
+  all: unset;
+  font-weight: 900;
+  font-size: 1.2em;
+  color: white;
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+.project-btn {
+  all: unset;
+  position: absolute;
+  top: 35px;
+  left: 35%;
+  cursor: pointer;
+  color: white;
+  background-color: #2f89fc;
+  padding: 5px;
 }
 .all-projects {
   display: flex;
+  margin: 75px 0;
   flex-direction: column;
-  width: 100%;
+  width: 85%;
   height: auto;
 }
 .project {
   display: flex;
-  width: 90%;
+  width: 95%;
   justify-content: space-between;
+  align-items: center;
+  padding: 0.6em;
+  /* border-top: #474242 2px solid; */
+  /* border-bottom: #474242 2px solid; */
+  /* border-radius: 10px; */
+  text-transform: capitalize;
+  cursor: pointer;
+  color: white;
+}
+.project:hover {
+  background-color: #382f2f93;
+  border-radius: 10px;
 }
 .project-name {
   flex: 1;
 }
 .project-control {
   display: flex;
+  width: 20%;
   justify-content: space-evenly;
+}
+.project-control :first-child {
+  all: unset;
+  color: white;
+  font-weight: 800;
+  padding: 0.2em;
+  font-size: 1em;
+}
+.project-control :last-child {
+  all: unset;
+  color: red;
+  font-size: 1em;
+  padding: 0.3em;
+  font-weight: 800;
+}
+.project-control :first-child:hover {
+  background-color: #fff23591;
+  border-radius: 5px;
+}
+.project-control :last-child:hover {
+  background-color: #830a0a8a;
+  border-radius: 5px;
 }
 
 .new-project {
@@ -130,24 +181,68 @@ body {
 }
 
 .tasks {
+  color: white;
   display: flex;
+  margin: 25px;
   flex-direction: column;
   align-items: center;
-  max-width: 1000px;
-  min-width: 450px;
+  max-width: 750px;
+  width: 62%;
+  min-width: 350px;
   height: auto;
+  /* overflow: auto; */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .task {
   display: flex;
+  width: 97%;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  padding: 0.6em;
+  border-top: #474242 2px solid;
+  border-bottom: #474242 2px solid;
+  border-radius: 10px;
+  text-transform: capitalize;
+  color: white;
+}
+.task:hover {
+  background-color: #382f2f93;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.task:first-child {
+  margin: 15px;
+  text-transform: capitalize;
 }
 .task-name {
   flex: 1;
 }
 .task-control {
   display: flex;
+  width: 10%;
   justify-content: space-evenly;
+}
+.task-control :first-child {
+  all: unset;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.2em;
+}
+.task-control :last-child {
+  all: unset;
+  padding: 0.3em;
+  font-size: 1em;
+  font-weight: 800;
+  color: red;
+}
+.task-control :first-child:hover {
+  border-radius: 3px;
+  background-color: #fff23591;
+}
+.task-control :last-child:hover {
+  border-radius: 3px;
+  background-color: #830a0a94;
 }
 .new-task {
   position: absolute;
