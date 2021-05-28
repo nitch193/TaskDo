@@ -12,7 +12,6 @@ export default function projectDiv(selectedProject, allProjects) {
   projectName.className = "project-name";
   projectName.onclick = function () {
     selectedProject = this.firstChild.textContent;
-    console.log(selectedProject);
     renderTasks(selectedProject, allProjects);
   };
   const projectControls = document.createElement("div");
