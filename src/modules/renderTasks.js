@@ -8,7 +8,9 @@ export default function renderTasks(selectedProject, allProjects) {
   if (allProjectNames.includes(selectedProject)) {
     clearTaskBody(taskBody);
     let tasks = getAllTasks(allProjects, selectedProject);
-    taskBody.firstChild.textContent = tasks.name;
+    const projectNameDiv = document.createElement("div");
+    projectNameDiv.textContent = tasks.name;
+    taskBody.appendChild(projectNameDiv);
     for (let i = 0; i < tasks.Tasks.length; i++) {
       let taskDiv = createTaskBody(allProjects);
       taskDiv.firstChild.textContent =
@@ -17,6 +19,7 @@ export default function renderTasks(selectedProject, allProjects) {
         tasks.Tasks[i].due +
         "/" +
         tasks.Tasks[i].priority;
+
       taskBody.appendChild(taskDiv);
     }
   }
