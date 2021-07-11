@@ -5,6 +5,7 @@ import saveLocalStorage from "./saveLocalStorage";
 export default function deleteThisTask(button, allProjects) {
   let selectedProject =
     button.parentNode.parentNode.parentNode.firstChild.textContent;
+    
   let projectIndex = getAllProject(allProjects).indexOf(selectedProject);
   let allTasks = allProjects[projectIndex].Tasks;
   let selectedTask = button.parentNode.previousSibling.textContent.split(

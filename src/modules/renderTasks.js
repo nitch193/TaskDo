@@ -8,18 +8,15 @@ export default function renderTasks(selectedProject, allProjects) {
   if (allProjectNames.includes(selectedProject)) {
     clearTaskBody(taskBody);
     let tasks = getAllTasks(allProjects, selectedProject);
-    const projectNameDiv = document.createElement("div");
-    projectNameDiv.textContent = tasks.name;
-    taskBody.appendChild(projectNameDiv);
+    const projectnamediv = document.createElement("div");  
+    taskBody.appendChild(projectnamediv);
+    projectnamediv.textContent = selectedProject
     for (let i = 0; i < tasks.Tasks.length; i++) {
       let taskDiv = createTaskBody(allProjects);
-      taskDiv.firstChild.textContent =
-        tasks.Tasks[i].taskName +
-        "/" +
-        tasks.Tasks[i].due +
-        "/" +
-        tasks.Tasks[i].priority;
-
+      taskDiv.firstChild.textContent = `${i}`;
+      taskDiv.childNodes[1].firstChild.firstChild.textContent = tasks.Tasks[i].taskName;
+      taskDiv.childNodes[1].childNodes[1].firstChild.textContent = `Priority: ${tasks.Tasks[i].priority}`
+      taskDiv.childNodes[1].childNodes[2].firstChild.textContent = `Due-Date: ${tasks.Tasks[i].due}` 
       taskBody.appendChild(taskDiv);
     }
   }

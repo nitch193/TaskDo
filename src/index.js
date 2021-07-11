@@ -25,6 +25,7 @@ export { taskBody, editTaskForm, editProjectForm };
     let getProjects = [...JSON.parse(localStorage.getItem("allProjects"))];
     allProjects = [...getProjects];
   }
+
   newTask(newTaskFormDiv, allProjects, selectedProject);
   renderProjects(projects, allProjects, selectedProject);
   renderTasks(selectedProject, allProjects);
