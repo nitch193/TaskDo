@@ -7,6 +7,7 @@ import renderProjects from "./renderprojects";
 export default function projectDiv(selectedProject, allProjects, i) {
   const project = document.createElement("div");
   project.className = "project";
+  project.classList.add('border', 'border-5')
   const projectNameDiv = document.createElement("div");
   const projectName = document.createElement('p')
   projectName.className = "project-name";

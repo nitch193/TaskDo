@@ -6,6 +6,7 @@ import saveLocalStorage from "./saveLocalStorage";
 export default function createTaskBody(allProjects) {
   const task = document.createElement("div");
   task.className = "task";
+  task.classList.add('border', 'border-5')
   const taskDetail = document.createElement("div");
   
   const taskNameDiv = document.createElement('div');
