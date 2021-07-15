@@ -30,4 +30,16 @@ export { taskBody, editTaskForm, editProjectForm };
   renderProjects(projects, allProjects, selectedProject);
   renderTasks(selectedProject, allProjects);
   newProject(projects, newProjectForm, allProjects);
+  const mode = document.getElementById("paperSwitch11");
+  mode.addEventListener("change", (e) => {
+    if (e.target.checked) {
+      document.querySelector("html").classList.remove("dark");
+      document.querySelector(".paper-switch-2-label").textContent =
+        "Light Mode";
+    }
+    if (!e.target.checked) {
+      document.querySelector("html").classList.add("dark");
+      document.querySelector(".paper-switch-2-label").textContent = "Dark Mode";
+    }
+  });
 })();
